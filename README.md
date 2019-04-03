@@ -47,3 +47,39 @@ Our primary goal is to provide a structured framework that enables PHP users at 
 
 [CookBook "Contributing" Section (2.x)](https://book.cakephp.org/2.0/en/contributing.html) [(3.x)](https://book.cakephp.org/3.0/en/contributing.html) - Version-specific details about contributing to the project
 # cakeblog
+■ 環境設定
+- Vagrant+VirtualBox
+- CentOS 7.2以降
+- Apache2.4
+  -- VirtualHostの設定（http://blog.dev）
+- MySQL5.7
+- PHP5.6（7系にするか考え中）
+- Git（最新）
+- SSHでログインできるようにアカウントを追加
+
+■ CakePHP チュートリアル
+http://book.cakephp.org/2.0/ja/tutorials-and-examples.html
+
+■ CakePHP カスタマイズ
+categories 1-多 posts
+tags 多-多 tags
+images 多 - 1 posts
+
+■ CakePHP プラグイン：
+
+①Search Pluginでの検索。（https://github.com/CakeDC/search）
+- カテゴリ
+- タイトル
+- タグ　
+から検索
+
+②Upload Plugin でpostsに画像を検索できるようにする。（https://github.com/josegonzalez/cakephp-upload/tree/2.x）
+
+■ Bootstrap4の導入（参考：http://getbootstrap.com/）（こんな感じの見た目に：http://getbootstrap.com/examples/blog/）
+
+■ JQuery チュートリアル（参考：http://www.w3schools.com/jquery/）
+- ヘッダにボタン追加して、押下すると検索が開く
+- 画像をクリックするとポップアップ
+- ポップアップしている画像をスライド（こんな感じ：http://webkaru.net/jquery-plugin/sources/lightbox2/demo.html）
+- 市区町村を郵便番号で検索してinputタグに挿入する
+- データを入れ替える
