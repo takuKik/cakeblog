@@ -68,15 +68,24 @@
             <?php foreach ($posts as $key => $post): ?>
             <!-- 画像部分 -->
                 <div class="card m-1 shadow-sm" style="box-sizing:border-box; width:24.2%;">
-                <?php echo '<img src="' ?>
-                <?php echo 'https://picsum.photos/300/200?random&dammy='.$key; ?>
-                <?php echo '"alt="" class="card-img-top" >' ?>
-					<!-- タイトル部分 -->
-					<h2><?php echo h($post['Post']['title']); ?>&nbsp;<br>
-						<small style="font-size: medium;"><?php echo h("カテゴリ ".$post['Category']['name']); ?>&nbsp;<br>
-							<?php echo $this->Html->link("ユーザー番号: ".$post['User']['id'], array('controller' => 'users', 'action' => 'view', $post['User']['id'])); ?><br>
-							<?php echo h("記事作成日: ".$post['Post']['created']); ?>&nbsp;<br>
-							<?php echo h("記事更新日: ".$post['Post']['modified']); ?>&nbsp;</small></h2>
+                    <?php echo '<img src="' ?>
+                    <?php echo 'https://picsum.photos/300/200?random&dammy='.$key; ?>
+                    <?php echo '"alt="" class="card-img-top" >' ?>
+
+                    <div class="card-body">
+                    <!-- タイトル部分 -->
+					<h5 class="text-truncate font-weight-bold card-title">
+                    <?php echo $this->Html->link(
+                        $post['Post']['title'],
+                        array(
+                        'action' => 'view', $post['Post']['id']
+                        ),
+                        array(
+                        'class'  => 'stretched-link card-title',
+                    )
+                    );
+                    ?>
+                    </h5>
 							<p><?php echo h("タグ: "); foreach ($post['Tag'] as $tag): echo h($tag['name']."\n"); endforeach; ?></p>
 							<p><?php echo h("記事内容: ".$post['Post']['body']); ?></p>
 							<p class="actions">
@@ -86,7 +95,8 @@
 									<button type="button" class="btn btn-default"><?php echo $this->Form->postLink(__('削除'), array('action' => 'delete', $post['Post']['id']), array('confirm' => __('消去してもよろしいですか %s?', $post['Post']['id']))); ?></button>
 								</div>
 							</p>
-				</div>
+                </div>
+            </div>
 					<?php endforeach; ?>
 					<div class ="box">
 						<p><?php echo $this->Paginator->counter(array(
