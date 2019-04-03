@@ -67,19 +67,19 @@ images 多 - 1 posts
 
 ■ CakePHP プラグイン：
 
-①Search Pluginでの検索。（https://github.com/CakeDC/search）
+①Search Pluginでの検索。（https://github.com/CakeDC/search
 - カテゴリ
 - タイトル
 - タグ　
 から検索
 
-②Upload Plugin でpostsに画像を検索できるようにする。（https://github.com/josegonzalez/cakephp-upload/tree/2.x）
+②Upload Plugin でpostsに画像を追加できるようにする。（https://github.com/josegonzalez/cakephp-upload/tree/2.x
 
-■ Bootstrap4の導入（参考：http://getbootstrap.com/）（こんな感じの見た目に：http://getbootstrap.com/examples/blog/）
+■ Bootstrap4の導入（参考：http://getbootstrap.com/）（こんな感じの見た目に：http://getbootstrap.com/examples/blog/
 
-■ JQuery チュートリアル（参考：http://www.w3schools.com/jquery/）
+■ JQuery チュートリアル（参考：http://www.w3schools.com/jquery/
 - ヘッダにボタン追加して、押下すると検索が開く
 - 画像をクリックするとポップアップ
-- ポップアップしている画像をスライド（こんな感じ：http://webkaru.net/jquery-plugin/sources/lightbox2/demo.html）
+- ポップアップしている画像をスライド（こんな感じ：http://webkaru.net/jquery-plugin/sources/lightbox2/demo.html
 - 市区町村を郵便番号で検索してinputタグに挿入する
 - データを入れ替える
