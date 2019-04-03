@@ -18,7 +18,7 @@
 			<div class="collapse navbar-collapse" id="navbarAction">
 				<ul class="nav navbar-nav">
 					<li><?php echo $this->Html->link(__('記事編集'), array('action' => 'edit', $post['Post']['id'])); ?> </li>
-					<li><?php echo $this->Form->postLink(__('記事削除'), array('action' => 'delete', $post['Post']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $post['Post']['id']))); ?> </li>
+					<li><?php echo $this->Form->postLink(__('記事削除'), array('action' => 'delete', $post['Post']['id']), array('confirm' => __('消去してもよろしいですか # %s?', $post['Post']['id']))); ?> </li>
 					<li><?php echo $this->Html->link(__('記事一覧'), array('action' => 'index')); ?> </li>
 					<li><?php echo $this->Html->link(__('新規記事作成'), array('action' => 'add')); ?> </li>
 					<li><?php echo $this->Html->link(__('ユーザーリスト'), array('controller' => 'users', 'action' => 'index')); ?> </li>

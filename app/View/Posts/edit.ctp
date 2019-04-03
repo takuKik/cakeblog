@@ -19,42 +19,49 @@
 				</ul>
 			</div>
 		</div>
-	</nav>
+    </nav>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><?php echo $this->Html->link(__('記事一覧'), array('action' => 'index')); ?></li>            
+            <li class="breadcrumb-item active" aria-current="page"></li>
+        </ol>
+    </nav>
 	<div class="row box">
 		<div class="posts form">
-			<?php echo $this->Form->create('Post',array('inputDefaults'=>array('div'=>'form-group','class'=>'form-control'),'type' => 'file', 'enctype' => 'multipart/form-data')); ?>
+			<?php echo $this->Form->create('Post', array('inputDefaults'=>array('div'=>'form-group','class'=>'form-control'),'type' => 'file', 'enctype' => 'multipart/form-data')); ?>
 			<form>
 				<legend><?php echo __('記事の編集'); ?></legend>
 				<div class="form-group"><?php echo $this->Form->input('id'); ?></div>
 				<div class="form-group"><?php echo $this->Form->input('title'); ?></div>
 				<div class="form-group"><?php echo $this->Form->input('body');?></div>
 				<?php
-				echo $this->Form->input('Attachment.0.photo',
-				array(
-					'type'     => 'file',
-					'label'    => '',
-					'class'    => 'input-file mb-1',
-					'multiple' => true,
-					'id'       => '',
-				));
-				?>
+                echo $this->Form->input(
+    'Attachment.0.photo',
+    array(
+                    'type'     => 'file',
+                    'label'    => '',
+                    'class'    => 'input-file mb-1',
+                    'multiple' => true,
+                    'id'       => '',
+                )
+);
+                ?>
 				<?php
-				for($i = 0; $i < count($attachment); $i++){
-					if(!$attachment[$i]['deleted'] && !empty($attachment[$i]['photo'])){
-						echo '<div class="w-50 p-2 bg-white border">';
-						echo $this->Html->image('/files/attachment/photo/'.$attachment[$i]['dir'].DS.$attachment[$i]['photo'],array(
-							'id'=>'thumbnail'.$attachment[$i]['dir'],
-							'class'   => 'd-block img-fluid'
-						));
-						echo 'この画像を削除する</label><input type="checkbox" name="data[Post][Attachment][]" class="d-none checkbox-or" value="';
-						echo $attachment[$i]['id'].'"id="';
-						echo 'attachment'.$attachment[$i]['id'].'">';
-						echo '<span class="checkbox-or__text text-danger ml-2 bg-sakura py-2 px-5">この画像は削除されます</span>';
-						echo '</div>';
-						echo '</div>';
-					}
-				}
-				?>
+                for ($i = 0; $i < count($attachment); $i++) {
+                    if (!$attachment[$i]['deleted'] && !empty($attachment[$i]['photo'])) {
+                        echo '<div class="w-50 p-2 bg-white border">';
+                        echo $this->Html->image('/files/attachment/photo/'.$attachment[$i]['dir'].DS.$attachment[$i]['photo'], array(
+                            'id'=>'thumbnail'.$attachment[$i]['dir'],
+                            'class'   => 'd-block img-fluid'
+                        ));
+                        echo 'この画像を削除する</label><input type="checkbox" name="data[Post][Attachment][]" class="d-none checkbox-or" value="';
+                        echo $attachment[$i]['id'].'"id="';
+                        echo 'attachment'.$attachment[$i]['id'].'">';
+                        echo '<span class="checkbox-or__text text-danger ml-2 bg-sakura py-2 px-5">この画像は削除されます</span>';
+                        echo '</div>';
+                    }
+                }
+                ?>
 				<div class="form-group"><?php echo $this->Form->end(__('送信')); ?></div>
 			</form>
 		</div>

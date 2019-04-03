@@ -25,22 +25,24 @@
 			<div class="search">
 				<div class="form-inline">
 					<?php echo $this->Form->create('Post', array(
-						'url' =>  array_merge(array('action' => 'index'),
-						$this->params['pass']),'inputDefaults'=>array('class'=>'form-control'),
-						'novalidate' => true
-					)); ?>
+                        'url' =>  array_merge(
+                            array('action' => 'index'),
+                            $this->params['pass']
+                        ),'inputDefaults'=>array('class'=>'form-control'),
+                        'novalidate' => true
+                    )); ?>
 					<div class="form-group">
 						<?php echo $this->Form->label('タイトル'); ?>
-						<?php echo $this->Form->text('title',array("placeholder"=>"検索")); ?>
+						<?php echo $this->Form->text('title', array("placeholder"=>"検索")); ?>
 					</div>
 					<div class="form-group">
-						<?php echo $this->Form->input('categoryname',array('type'=>'select','options'=>$list,'label'=>'カテゴリー ','empty'=>'','selected'=>'')); ?>
-						<!--	<?php print var_export($list,true); ?>
+						<?php echo $this->Form->input('categoryname', array('type'=>'select','options'=>$list,'label'=>'カテゴリー ','empty'=>'','selected'=>'')); ?>
+						<!--	<?php print var_export($list, true); ?>
 						<?php echo $this->Form->label('Category'); ?>
 						<?php echo $this->Form->text('categoryname'); ?> -->
 					</div>
 					<div class="form-group">
-						<?php echo $this->Form->input('tagname',array('type'=>'select','options'=>$tags,'label'=>'Tag','empty'=>'','selected'=>'')); ?>
+						<?php echo $this->Form->input('tagname', array('type'=>'select','options'=>$tags,'label'=>'Tag','empty'=>'','selected'=>'')); ?>
 						<!--		<?php echo $this->Form->label('tag'); ?>
 						<?php echo $this->Form->text('tagname'); ?> -->
 					</div>
@@ -71,22 +73,22 @@
 							<?php echo $this->Html->link("ユーザー番号: ".$post['User']['id'], array('controller' => 'users', 'action' => 'view', $post['User']['id'])); ?><br>
 							<?php echo h("記事作成日: ".$post['Post']['created']); ?>&nbsp;<br>
 							<?php echo h("記事更新日: ".$post['Post']['modified']); ?>&nbsp;</small></h2>
-							<p><?php echo h("タグ: ");foreach ($post['Tag'] as $tag): echo h($tag['name']."\n"); endforeach; ?></p>
+							<p><?php echo h("タグ: "); foreach ($post['Tag'] as $tag): echo h($tag['name']."\n"); endforeach; ?></p>
 							<p><?php echo h("記事内容: ".$post['Post']['body']); ?></p>
 							<p class="actions">
 								<div class="btn-group" role="group">
 									<button type="button" class="btn btn-default"><?php echo $this->Html->link(__('内容'), array('action' => 'view', $post['Post']['id'])); ?></button>
 									<button type="button" class="btn btn-default"><?php echo $this->Html->link(__('編集'), array('action' => 'edit', $post['Post']['id'])); ?></button>
-									<button type="button" class="btn btn-default"><?php echo $this->Form->postLink(__('削除'), array('action' => 'delete', $post['Post']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $post['Post']['id']))); ?></button>
+									<button type="button" class="btn btn-default"><?php echo $this->Form->postLink(__('削除'), array('action' => 'delete', $post['Post']['id']), array('confirm' => __('消去してもよろしいですか %s?', $post['Post']['id']))); ?></button>
 								</div>
 							</p>
 						</div>
 					<?php endforeach; ?>
 					<div class ="box">
 						<p><?php echo $this->Paginator->counter(array(
-							'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
-						));
-						?></p>
+                            'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
+                        ));
+                        ?></p>
 					</div>
 					<div class ="box">
 						<div class="btn-toolbar">
