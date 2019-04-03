@@ -65,8 +65,12 @@
 	</div>
 	<div class="row">
 		<div class="d-flex">
-			<?php foreach ($posts as $post): ?>
-				<div class="box col-md-4">
+            <?php foreach ($posts as $key => $post): ?>
+            <!-- 画像部分 -->
+                <div class="card m-1 shadow-sm" style="box-sizing:border-box; width:24.2%;">
+                <?php echo '<img src="' ?>
+                <?php echo 'https://picsum.photos/300/200?random&dammy='.$key; ?>
+                <?php echo '"alt="" class="card-img-top" >' ?>
 					<!-- タイトル部分 -->
 					<h2><?php echo h($post['Post']['title']); ?>&nbsp;<br>
 						<small style="font-size: medium;"><?php echo h("カテゴリ ".$post['Category']['name']); ?>&nbsp;<br>
@@ -82,7 +86,7 @@
 									<button type="button" class="btn btn-default"><?php echo $this->Form->postLink(__('削除'), array('action' => 'delete', $post['Post']['id']), array('confirm' => __('消去してもよろしいですか %s?', $post['Post']['id']))); ?></button>
 								</div>
 							</p>
-						</div>
+				</div>
 					<?php endforeach; ?>
 					<div class ="box">
 						<p><?php echo $this->Paginator->counter(array(

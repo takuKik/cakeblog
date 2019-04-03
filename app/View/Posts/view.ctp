@@ -82,7 +82,7 @@
                     echo '画像'.$attachment[$i]['dir'].''; ?>
 					<div id="back-curtain"></div>
 					<div class="img">
-						<?php echo $this->Html->image('/files/attachment/photo/'.$attachment[$i]['dir'].DS.$attachment[$i]['photo']); ?>
+						<?php echo $this->Html->image('/files/attachment/photo/'.$attachment[$i]['dir'].DS.$attachment[$i]['photo'], array("img-thumbnail")); ?>
 						<div class="largeImg">
 							<?php echo $this->Html->image('/files/attachment/photo/'.$attachment[$i]['dir'].DS.$attachment[$i]['photo'], array('width'=>'400', 'height'=>'400')); ?>
 						</div>
