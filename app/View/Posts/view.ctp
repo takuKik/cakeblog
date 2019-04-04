@@ -90,7 +90,12 @@
 						</div>
 					</div>
 				<?php
-                } ?>
-			<?php
+                }
             } ?>
+				<div id="buttonR">
+					<button type="button">></button>
+				</div>
+				<div id="buttonL">
+					<button type="button"><</button>
+				</div>
 		</div>
