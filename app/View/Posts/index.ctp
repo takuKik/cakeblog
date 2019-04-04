@@ -86,7 +86,37 @@
                     );
                     ?>
                     </h5>
-							<p><?php echo h("タグ: "); foreach ($post['Tag'] as $tag): echo h($tag['name']."\n"); endforeach; ?></p>
+
+                    <!-- カテゴリー -->
+                    <span class="d-block">
+                        <?php echo h($post['Category']['name']); ?>
+                    </span>
+
+                    <!-- 日にち -->
+                    <span class="d-block text-muted">
+                        <i class="far fa-calendar-alt"></i>
+                        <?php
+                            $explode = explode(" ", $post['Post']['created']);
+                            $split   = split("-", $explode[0]);
+                            $year    = $split[0];
+                            $month   = $split[1];
+                            $day    = $split[2];
+                        ?>
+                        <?php echo $year; ?>年
+                        <?php echo $month; ?>月
+                        <?php echo $day; ?>日<br>
+                    </span>
+
+						<!-- タグ -->
+                        <span class="d-block">
+                            <i class="fas fa-tag text-muted"></i>
+                            <?php foreach ($post['Tag'] as $tag): ?>
+                                <span class="badge badge-secondary">
+                                    <?php echo h($tag['name']."\n"); ?>
+                                </span>
+                            <?php endforeach; ?>
+                        </span>
+
 							<p><?php echo h("記事内容: ".$post['Post']['body']); ?></p>
 							<p class="actions">
 								<div class="btn-group" role="group">
