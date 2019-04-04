@@ -16,14 +16,16 @@
 				</button>
 			</div>
 			<div class="collapse navbar-collapse" id="navbarAction">
-				<ul class="nav navbar-nav">
+            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">プルダウン<b class="caret"></b></a>
+				<ul class="nav navbar-nav dropdown-menu">
 					<li><?php echo $this->Html->link(__('記事編集'), array('action' => 'edit', $post['Post']['id'])); ?> </li>
 					<li><?php echo $this->Form->postLink(__('記事削除'), array('action' => 'delete', $post['Post']['id']), array('confirm' => __('消去してもよろしいですか # %s?', $post['Post']['id']))); ?> </li>
 					<li><?php echo $this->Html->link(__('記事一覧'), array('action' => 'index')); ?> </li>
 					<li><?php echo $this->Html->link(__('新規記事作成'), array('action' => 'add')); ?> </li>
 					<li><?php echo $this->Html->link(__('ユーザーリスト'), array('controller' => 'users', 'action' => 'index')); ?> </li>
 					<li><?php echo $this->Html->link(__('新規登録'), array('controller' => 'users', 'action' => 'add')); ?> </li>
-				</ul>
+                </ul>
+            </li>
 			</div>
 		</div>
     </nav>
@@ -91,31 +93,4 @@
                 } ?>
 			<?php
             } ?>
-			<div class="users index">
-				<div id="back-curtain"></div>
-				<div class="img" id="red">
-					<?php echo $this->Html->image('/files/image/neko.jpg'); ?>
-					<div class="largeImg" id="largeRed">
-						<?php echo $this->Html->image('/files/image/neko.jpg', array('width'=>'600', 'height'=>'400')); ?>
-					</div>
-				</div>
-				<div class="img" id="orange">
-					<?php echo $this->Html->image('/files/image/inu.jpg'); ?>
-					<div class="largeImg" id="largeOrange">
-						<?php echo $this->Html->image('/files/image/inu.jpg', array('width'=>'600', 'height'=>'400')); ?>
-					</div>
-				</div>
-				<div class="img" id="yellow">
-					<?php echo $this->Html->image('/files/image/neko2.jpg'); ?>
-					<div class="largeImg" id="largeYellow">
-						<?php echo $this->Html->image('/files/image/neko2.jpg', array('width'=>'600', 'height'=>'400')); ?>
-					</div>
-				</div>
-				<div id="buttonR">
-					<button type="button">></button>
-				</div>
-				<div id="buttonL">
-					<button type="button"><</button>
-				</div>
-			</div>
 		</div>

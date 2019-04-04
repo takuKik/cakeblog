@@ -56,15 +56,13 @@
 	</nav>
 	<div class="row">
 		<div class="col-md-12" id="title">
-			<div class="box">
+			<div class="">
 				<h1>
-					<?php echo __('記事一覧'); ?><br>
+					<?php echo __('TOP STORIES'); ?><br>
 				</h1>
 			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="d-flex">
             <?php foreach ($posts as $key => $post): ?>
             <!-- 画像部分 -->
                 <div class="card m-1 shadow-sm" style="box-sizing:border-box; width:24.2%;">
@@ -90,7 +88,7 @@
                     <!-- カテゴリー -->
                     <span class="d-block">
                         <?php echo h($post['Category']['name']); ?>
-                    </span>
+                    </span><br>
 
                     <!-- 日にち -->
                     <span class="d-block text-muted">
@@ -107,40 +105,28 @@
                         <?php echo $day; ?>日<br>
                     </span>
 
-						<!-- タグ -->
-                        <span class="d-block">
-                            <i class="fas fa-tag text-muted"></i>
-                            <?php foreach ($post['Tag'] as $tag): ?>
-                                <span class="badge badge-secondary">
-                                    <?php echo h($tag['name']."\n"); ?>
-                                </span>
-                            <?php endforeach; ?>
-                        </span>
+					<!-- タグ -->
+                    <span class="d-block">
+                        <i class="fas fa-tag text-muted"></i>
+                        <?php foreach ($post['Tag'] as $tag): ?>
+                            <span class="badge badge-secondary">
+                                <?php echo h($tag['name']."\n"); ?>
+                            </span>
+                        <?php endforeach; ?>
+                    </span>
 
-							<p><?php echo h("記事内容: ".$post['Post']['body']); ?></p>
-							<p class="actions">
-								<div class="btn-group" role="group">
-									<button type="button" class="btn btn-default"><?php echo $this->Html->link(__('内容'), array('action' => 'view', $post['Post']['id'])); ?></button>
-									<button type="button" class="btn btn-default"><?php echo $this->Html->link(__('編集'), array('action' => 'edit', $post['Post']['id'])); ?></button>
-									<button type="button" class="btn btn-default"><?php echo $this->Form->postLink(__('削除'), array('action' => 'delete', $post['Post']['id']), array('confirm' => __('消去してもよろしいですか %s?', $post['Post']['id']))); ?></button>
-								</div>
-							</p>
+					<p><?php echo h("記事内容: ".$post['Post']['body']); ?></p>
+					<p class="actions">
+							<button type="button" class="btn btn-default"><?php echo $this->Html->link(__('内容'), array('action' => 'view', $post['Post']['id'])); ?></button>
+							<button type="button" class="btn btn-default"><?php echo $this->Html->link(__('編集'), array('action' => 'edit', $post['Post']['id'])); ?></button>
+							<button type="button" class="btn btn-default"><?php echo $this->Form->postLink(__('削除'), array('action' => 'delete', $post['Post']['id']), array('confirm' => __('消去してもよろしいですか %s?', $post['Post']['id']))); ?></button>
+					</p>
+                    </div>
                 </div>
-            </div>
-					<?php endforeach; ?>
-					<div class ="box">
-						<p><?php echo $this->Paginator->counter(array(
-                            'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
-                        ));
-                        ?></p>
-					</div>
-					<div class ="box">
-						<div class="btn-toolbar">
-							<button class="btn square_btn"><?php echo $this->Paginator->prev('< ' . __('前のページへ'), array(), null, array('class' => 'prev disabled')); ?></button>
-							<button class="btn square_btn"><?php echo $this->Paginator->next(__('次のページへ') . ' >', array(), null, array('class' => 'next disabled')); ?></button>
-						</div>
-					</div>
+			<?php endforeach; ?>
+				<div class="btn-toolbar">
+					<button class="btn square_btn"><?php echo $this->Paginator->prev('< ' . __('前のページへ'), array(), null, array('class' => 'prev disabled')); ?></button>
+					<button class="btn square_btn"><?php echo $this->Paginator->next(__('次のページへ') . ' >', array(), null, array('class' => 'next disabled')); ?></button>
 				</div>
-			</div>
 		</div>
 	</div>

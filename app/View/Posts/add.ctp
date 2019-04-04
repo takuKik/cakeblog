@@ -31,13 +31,13 @@
                 echo $this->Form->input(
     'Attachment.0.photo',
     array(
-                    'type'     => 'file',
-                    'label'    => '',
-                    'class'    => 'input-file mb-1',
-                    'multiple' => true,
-                    'id'       => '',
-                )
-);
+                        'type'     => 'file',
+                        'label'    => '',
+                        'class'    => 'input-file mb-1',
+                        'multiple' => true,
+                        'id'       => '',
+                    )
+                    );
                 ?>
 				<?php echo $this->Form->input('Tag', array('type'=>'select','options'=>$tag,'multiple' => 'checkbox','size' => 5,'class'=>'checkbox')); ?>
 				<div class="form-group">

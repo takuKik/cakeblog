@@ -10,6 +10,23 @@
 	<?php echo $this->Html->css('bootstrap.min'); ?>
 	<style>
 
+    .card-img-top {
+        display: block;
+        width: 100%;
+    }
+    .card {
+        float: left;
+        margin-right: 100px;
+    }
+
+    .card-body{
+        background: #ffffff;
+    }
+
+    .btn-toolbar{
+        background: #fffafa
+    }
+
 	#contents {
 		z-index: 0;
 		font-size: 16px;
@@ -55,13 +72,12 @@
 
 	}
 	h1 {
-		font-size:60px;
+		font-size:30px;
 		font-weight:normal;
 		font-style:italic;
 		text-align: left;
 		color: #010101;/*文字色*/
-		background: #eaf3ff;/*背景色*/
-		border-bottom: solid 3px #516ab6;/*下線*/
+		border-bottom: solid 1px black;/*下線*/
 	}
 	h2 {
 		font-size:35px;
@@ -70,6 +86,7 @@
 	}
 	body {
 		padding: 70px 0 0 0;
+        background: #fffaf0;
 	}
 	p {
 		font-size: 16px;
@@ -99,10 +116,10 @@
 	legend {
 		font-size:64px;
 	}
-	#flashMessage{
-		font-size:30px;
+	#flashMessage {
+		font-size: 30px;
 		background: #66FFFF;
-		text-align:center;
+		text-align: center;
 	}
 	.form-group{
 		font-size: 18px;
@@ -110,6 +127,7 @@
 	/* 画スライドショー*/
 	.img{
 		padding: 2px 0 2px 0;
+        display: block;
 	}
 	.largeImg{
 		display:none;
@@ -143,17 +161,16 @@
 		position: relative;
 		padding: 0.5em 1.4em;
 		text-decoration: none;
-		background: #7239ce;/*ボタン色*/
 		color: #FFF;
-		border-bottom: solid 5px #7239ce;
-		border-right: solid 5px #7239ce;
+		border-bottom: solid 5px;
+		border-right: solid 5px ;
 	}
 	.btn-group:active {
-		border-bottom: 2px solid #7239ce;
+		border-bottom: 2px solid;
 		box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
 	}
 	.btn btn-primary btn-lg {
-		color: #7239ce;
+		
 	}
 	.square_btn{
 		width:160px;
