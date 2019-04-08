@@ -161,6 +161,6 @@ class PostsController extends AppController
     public function beforeFilter()
     {
         parent::beforeFilter();
-        $this->Auth->allow('index', 'view', 'add', 'edit', "delete", 'fileup', 'upload');
+        $this->Auth->allow('index', 'view', 'add', 'edit', "delete");
     }
 }

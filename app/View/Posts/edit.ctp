@@ -54,6 +54,7 @@
                             'id'=>'thumbnail'.$attachment[$i]['dir'],
                             'class'   => 'd-block img-fluid'
                         ));
+                        echo '</div>';
                         echo 'この画像を削除する</label><input type="checkbox" name="data[Post][Attachment][]" class="d-none checkbox-or" value="';
                         echo $attachment[$i]['id'].'"id="';
                         echo 'attachment'.$attachment[$i]['id'].'">';

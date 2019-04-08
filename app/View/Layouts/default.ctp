@@ -19,11 +19,12 @@
         margin-right: 100px;
     }
 
-    .card-body{
+    .card-body {
         background: #ffffff;
+        text-align: left;
     }
 
-    .btn-toolbar{
+    .btn-toolbar {
         background: #fffafa
     }
 
@@ -72,9 +73,9 @@
 
 	}
 	h1 {
-		font-size:30px;
-		font-weight:normal;
-		font-style:italic;
+		font-size: 30px;
+		font-weight: normal;
+		font-style: italic;
 		text-align: left;
 		color: #010101;/*文字色*/
 		border-bottom: solid 1px black;/*下線*/

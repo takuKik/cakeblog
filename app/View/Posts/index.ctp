@@ -51,21 +51,6 @@
 				<?php echo __('TOP STORIES'); ?><br>
 			</h1>
         </div>
-        <?php foreach ($posts as $key => $post): ?>
-        <span class="d-block text-muted">
-                        <i class="far fa-calendar-alt"></i>
-                        <?php
-                            $explode = explode(" ", $post['Post']['created']);
-                            $split   = split("-", $explode[0]);
-                            $year    = $split[0];
-                            $month   = $split[1];
-                            $day    = $split[2];
-                        ?>
-                        <?php echo $year; ?>年
-                        <?php echo $month; ?>月
-                        <?php echo $day; ?>日<br>
-        </span>
-        <?php endforeach; ?>
             <?php foreach ($posts as $key => $post): ?>
             <!-- 画像部分 -->
                 <div class="card m-1 shadow-sm" style="box-sizing:border-box; width:24.2%;">
@@ -77,11 +62,11 @@
                     <!-- タイトル部分 -->
 					<h5 class="text-truncate font-weight-bold card-title">
                     <?php echo $this->Html->link(
-                            $post['Post']['title'],
-                            array(
+                        $post['Post']['title'],
+                        array(
                         'action' => 'view', $post['Post']['id']
                         ),
-                            array(
+                        array(
                         'class'  => 'stretched-link card-title',
                     )
                     );
@@ -98,7 +83,7 @@
                         <i class="far fa-calendar-alt"></i>
                         <?php
                             $explode = explode(" ", $post['Post']['created']);
-                            $split   = split("-", $explode[0]);
+                            $split   = explode("-", $explode[0]);
                             $year    = $split[0];
                             $month   = $split[1];
                             $day    = $split[2];
