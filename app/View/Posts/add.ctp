@@ -23,7 +23,7 @@
 		<div class="posts form box">
 			<?php echo $this->Form->create('Post', array('inputDefaults'=>array('div'=>'form-group','class'=>'form-control'),'type' => 'file', 'enctype' => 'multipart/form-data')); ?>
 			<form>
-				<legend><?php echo __('新規記事追加', array('type' => 'file')); ?></legend>
+				<h1><?php echo __('新規記事追加', array('type' => 'file')); ?></h1>
 				<?php echo $this->Form->input('category_id', array('type'=>'select','options'=>$list)); ?>
 				<?php echo $this->Form->input('title');?>
 				<?php echo $this->Form->input('body');?>

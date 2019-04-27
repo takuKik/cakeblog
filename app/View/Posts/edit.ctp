@@ -30,7 +30,7 @@
 		<div class="posts form">
 			<?php echo $this->Form->create('Post', array('inputDefaults'=>array('div'=>'form-group','class'=>'form-control'),'type' => 'file', 'enctype' => 'multipart/form-data')); ?>
 			<form>
-				<legend><?php echo __('記事の編集'); ?></legend>
+				<h1><?php echo __('記事の編集'); ?></h1>
 				<div class="form-group"><?php echo $this->Form->input('id'); ?></div>
 				<div class="form-group"><?php echo $this->Form->input('title'); ?></div>
 				<div class="form-group"><?php echo $this->Form->input('body');?></div>
@@ -63,7 +63,7 @@
                     }
                 }
                 ?>
-				<div class="form-group"><?php echo $this->Form->end(__('送信')); ?></div>
+				<div class="form-group"><?php echo $this->Form->end(__('送信'), array('class'=>'btn btn-info btn-lg')); ?></div>
 			</form>
 		</div>
 	</div>

@@ -124,6 +124,7 @@
 	}
 	.form-group{
 		font-size: 18px;
+        text-align: left;
 	}
 	/* 画スライドショー*/
 	.img{
